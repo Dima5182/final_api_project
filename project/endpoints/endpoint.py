@@ -30,8 +30,24 @@ class Endpoint:
 
     @allure.step('Check that text is the same as sent')
     def check_response_text_is_correct(self, text):
-        assert self.response_json['text'] == text
+        assert self.response.json()['text'] == text
+
+    @allure.step('Check that tags are the same as sent')
+    def check_response_tags_are_correct(self, tags):
+        assert self.response.json()['tags'] == tags
+
+    @allure.step('Check that info is the same as sent')
+    def check_response_info_is_correct(self, info):
+        assert self.response.json()['info'] == info
+
+    @allure.step('Check that url is the same as sent')
+    def check_response_url_is_correct(self, url):
+        assert self.response.json()['url'] == url
 
     @allure.step('Check that id is the same as sent')
     def check_response_id_is_correct(self, object_id):
-        assert self.response_json['id'] == object_id
+        assert self.response.json()['id'] == object_id
+
+    @allure.step('Check that response is not empty')
+    def check_response_json_is_not_empty(self):
+        assert len(self.response.json()) > 0

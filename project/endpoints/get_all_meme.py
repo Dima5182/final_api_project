@@ -15,3 +15,4 @@ class GetAllMeme(Endpoint):
             headers=self.headers
         )
         return self.response
+

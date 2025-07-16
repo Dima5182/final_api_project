@@ -21,3 +21,4 @@ class CreateMeme(Endpoint):
             return self.response
         except ValueError:
             return self.response
+

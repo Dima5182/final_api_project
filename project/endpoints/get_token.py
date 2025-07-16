@@ -14,3 +14,4 @@ class Authorize():
         )
         self.token = response.json()['token']
         return self.token
+
